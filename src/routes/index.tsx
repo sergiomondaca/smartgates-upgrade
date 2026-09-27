@@ -40,9 +40,10 @@ function Index() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const name = String(data.get("name") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
     const service = String(data.get("service") || "").trim();
     const message = String(data.get("message") || "").trim();
-    const text = `Hola Smart Gates, soy ${name}. Me interesa ${service}.${message ? ` Mi proyecto: ${message}` : ""}`;
+    const text = `Hola Smart Gates, soy ${name}. Mi teléfono es ${phone}. Me interesa ${service}.${message ? ` Mi proyecto: ${message}` : ""}`;
     window.open(`${whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
     setSent(true);
   }
